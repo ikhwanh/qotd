@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 	"math/rand"
 	"os"
@@ -128,7 +127,6 @@ func show(c *cli.Context) error {
 }
 
 func generate() ([]cfg.Qotd, error) {
-	fmt.Println(cfg.DataPath())
 	db, err := sql.Open("sqlite3", cfg.DataPath())
 
 	if err != nil {
