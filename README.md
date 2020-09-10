@@ -26,3 +26,9 @@ Displays a quran verse every time a new terminal is opened. Update every day. Cu
 	or
 
 		$ make bashrc
+
+5. Source .bashrc
+
+		$ source .bashrc
+
+6. Open new terminal
