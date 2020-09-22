@@ -95,6 +95,12 @@ func main() {
 }
 
 func setupConfig(c *cfg.Config) {
+	if c.IsNewDay() {
+		// new day has come so move cursor
+		c.Cursor = c.Cursor + 1
+		c.SetNewDay()
+	}
+
 	if c.IsRefreshNeeded() {
 		qotds, err := generate()
 
@@ -105,12 +111,6 @@ func setupConfig(c *cfg.Config) {
 		c.Cursor = 0
 		c.DayLastUpdated = time.Now().Day()
 		c.Qotds = qotds
-	}
-
-	if c.IsNewDay() {
-		// new day has come so move cursor
-		c.Cursor = c.Cursor + 1
-		c.SetNewDay()
 	}
 }
 
