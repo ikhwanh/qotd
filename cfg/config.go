@@ -184,7 +184,7 @@ func Lookup() string {
 
 // IsNewDay is check now is new day
 func (c *Config) IsNewDay() bool {
-	if c.DayLastUpdated < time.Now().Day() {
+	if c.DayLastUpdated != time.Now().Day() {
 		return true
 	}
 	return false
